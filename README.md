@@ -44,5 +44,4 @@ There are 2 components for this solution:
     - could also be implemented as a kafka topic/rabbit mq queue , or redis pub/sub 
 - implement and separate logic for command validation (place bid, create auction)
 
-P.S: This was a really cool project and i really liked it , and would've gone way deeper and done more (also added grpc) if i had more time.
-For any questions please let me know
+P.S: This was a really a fun project and i really liked it , and would've gone way deeper and done more (also added grpc) if i had more time.
