@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{41E1A5E5-FB4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5D2E003E-E20F-4B48-AE6A-F900090FF3FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitfinex.App", "src\Bitfinex.App\Bitfinex.App.csproj", "{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bitfinex.App", "src\Bitfinex.App\Bitfinex.App.csproj", "{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscoveryServer", "DiscoveryServer\DiscoveryServer.csproj", "{D5666CAA-3B90-40C2-B7CC-23FF08A12D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryServer", "src\DiscoveryServer\DiscoveryServer.csproj", "{C288EDD2-94BF-402F-BEB1-0C7531D83631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,17 +21,17 @@ Global
 		{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5666CAA-3B90-40C2-B7CC-23FF08A12D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5666CAA-3B90-40C2-B7CC-23FF08A12D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5666CAA-3B90-40C2-B7CC-23FF08A12D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5666CAA-3B90-40C2-B7CC-23FF08A12D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C288EDD2-94BF-402F-BEB1-0C7531D83631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C288EDD2-94BF-402F-BEB1-0C7531D83631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C288EDD2-94BF-402F-BEB1-0C7531D83631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C288EDD2-94BF-402F-BEB1-0C7531D83631}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073} = {41E1A5E5-FB41-4CCA-82AD-92FEFAA7AC01}
-		{D5666CAA-3B90-40C2-B7CC-23FF08A12D59} = {41E1A5E5-FB41-4CCA-82AD-92FEFAA7AC01}
+		{C288EDD2-94BF-402F-BEB1-0C7531D83631} = {41E1A5E5-FB41-4CCA-82AD-92FEFAA7AC01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEA36F66-4FF2-416B-AAA9-4DEF3F929605}
