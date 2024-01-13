@@ -9,7 +9,7 @@ namespace Bitfinex.App.Server
 {
     internal class AuctionServer : IAuctionServer
     {
-        private readonly HubConnection _hubconnection;
+        private  HubConnection _hubconnection;
         private readonly string clientId;
 
         private ConcurrentDictionary<Guid, Auction> auctions = new ConcurrentDictionary<Guid, Auction>();
@@ -117,21 +117,6 @@ namespace Bitfinex.App.Server
         {
 
             var date = DateTime.UtcNow;
-            var bidPlacedEvent = new BidPlaced
-            {
-                AuctionId=bidParams.AuctionId,
-                Bid = new Bid
-                {
-                    Amount = bidParams.Amount,
-                    Bidder = bidParams.Bidder,
-                    DateOfBid = date
-                }
-            };
-            if(!auctions.TryGetValue(bidParams.AuctionId,out var auction))
-            {
-                Console.WriteLine("Could not place bid on target auction");
-                return;
-            }
             var newBid = new Bid
             {
                 Id = Guid.NewGuid(),
@@ -139,12 +124,24 @@ namespace Bitfinex.App.Server
                 Bidder = bidParams.Bidder,
                 DateOfBid = date
             };
+            
+            if(!auctions.TryGetValue(bidParams.AuctionId,out var auction))
+            {
+                Console.WriteLine("Could not place bid on target auction");
+                return;
+            }
+          
             if (!ValidateBid(auction,newBid))
             {
                 Console.WriteLine("Invalid bid");
                 return;
             }
             auction.Bids.Add(newBid);
+            var bidPlacedEvent = new BidPlaced
+            {
+                AuctionId = bidParams.AuctionId,
+                Bid =newBid
+            };
             _hubconnection.InvokeAsync("BroadcastPlaceBid", bidPlacedEvent);
         }
 
@@ -169,7 +166,7 @@ namespace Bitfinex.App.Server
                 par.tcs.SetException(new ArgumentNullException($"Could not find auction with id {par.@params.AuctionId}"));
                 return;
             }
-            if (auction.CreatedBy.Equals(clientId))
+            if (!auction.CreatedBy.Equals(clientId))
             {
                 par.tcs.SetException(new InvalidOperationException($"No closing rights for auction :${auction.AuctionId} for participant:{clientId}"));
                 return;
@@ -180,7 +177,7 @@ namespace Bitfinex.App.Server
 
         private void HandleAuctionClosed(AuctionClosed auctionClosed)
         {
-            Console.WriteLine($"Auction with id: {auctionClosed.Result.AuctionId} was closed, with winner {auctionClosed.Result.Winner} for amount {auctionClosed.Result.WinningAmount}")
+            Console.WriteLine($"Auction with id: {auctionClosed.Result.AuctionId} was closed, with winner {auctionClosed.Result.Winner} for amount {auctionClosed.Result.WinningAmount}");
         }
 
 
