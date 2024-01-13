@@ -5,8 +5,6 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{41E1A5E5-FB41-4CCA-82AD-92FEFAA7AC01}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5D2E003E-E20F-4B48-AE6A-F900090FF3FE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bitfinex.App", "src\Bitfinex.App\Bitfinex.App.csproj", "{2EA80DD5-B2FE-474E-9515-4EF5DA4F1073}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryServer", "src\DiscoveryServer\DiscoveryServer.csproj", "{C288EDD2-94BF-402F-BEB1-0C7531D83631}"
