@@ -1,7 +1,6 @@
 # Bitfinex
 
-The solution does not use RPC due to lack of time.
-I have used SignalR
+The solution does not use RPC but SignalR
 
 There are 2 components for this solution:
 
